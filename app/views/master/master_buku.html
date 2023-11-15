@@ -1,0 +1,114 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<!-- Search bar start -->
+<div class="search-container">
+    <!-- Row start -->
+    <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 col-md-7 col-sm-8 col-12">
+
+            <div class="search-box">
+                <input type="text" class="search-query" ng-change="getBooks()" ng-model="searchValue"
+                    placeholder="Search your books here ...">
+                <i class="icon-search1"></i>
+            </div>
+
+        </div>
+    </div>
+    <!-- Row end -->
+</div>
+<!-- Search bar end -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <div class="mr-2">
+                    <h5 class="title">Books</h5>
+                </div>
+                <div class="date-range">
+                    <select name="filterCategory" ng-model="filterCategory" id="filterCategory"
+                        class="form-control form-control-sm" ng-change="getBooks()">
+                        <option ng-value="">Filter Category
+                        </option>
+                        <option ng-repeat="category in categories" ng-value="{{category.id}}">{{category.nama_kategori}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container" ng-show="{{admin}}">
+                <a href="#!/import-buku" data-toggle="tooltip" data-placement="top" title="Import Excel"
+                    class="download-reports">
+                    <i class="icon-upload1"></i>
+                </a>
+                <a href="" data-toggle="tooltip" data-placement="top" title="Download PDF" class="download-reports mr-2"
+                    ng-click="downloadPdf()">
+                    <i class="icon-download"></i>
+                </a>
+                <a href="" data-toggle="tooltip" data-placement="top" title="Export Excel" class="download-reports mr-2"
+                    ng-click="downloadExcel()">
+                    <i class="icon-download1"></i>
+                </a>
+                <a href="#!/add-buku" data-toggle="tooltip" data-placement="top" title="Tambah Buku"
+                    class="download-reports mr-2">
+                    <i class="icon-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Judul</th>
+                                    <th>Nama Kategori</th>
+                                    <th>Stok</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="book in books.data">
+                                    <td>{{book.slug}}</td>
+                                    <td>{{book.judul}}</td>
+                                    <td>{{book.category.nama_kategori}}</td>
+                                    <td>{{book.stok}}</td>
+                                    <td>
+                                        <a href="#!/detail-buku?id_detail={{book.id}}" class="btn btn-sm btn-primary"><i
+                                                class="icon-eye1"></i></a>
+                                        <a ng-show="{{admin}}" href="#!/edit-buku?id={{book.id}}"
+                                            class="btn btn-sm btn-warning"><i class="icon-pencil"></i></a>
+                                        <button ng-show="{{admin}}" class="btn btn-sm btn-danger"
+                                            ng-click="deleteBooksFunc(book.id)"><i class="icon-delete1"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-right mt-3">
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(books.prev_page_url)"
+                                ng-show="books.prev_page_url">Prev</button>
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(books.next_page_url)"
+                                ng-show="books.next_page_url">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

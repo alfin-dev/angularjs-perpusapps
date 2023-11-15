@@ -1,0 +1,66 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="title">Form Import Kategori</h5>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container">
+                <div class="date-range">
+                    <div id="reportrange">
+                        <i class="icon-calendar cal"></i>
+                        <span class="range-text"></span>
+                        <i class="icon-chevron-down arrow"></i>
+                    </div>
+                </div>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Download CSV" class="download-reports">
+                    <i class="icon-download1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <form ng-submit="importBooksFunc()" name="importForm" novalidate>
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="cover">Upload Excel</label>
+                                    <input type="file" id="cover" class="form-control"
+                                        onchange="angular.element(this).scope().SelectFileExcel(event)" />
+                                </div>
+                                <a href="" ng-click="downloadTemplateExport()">Download template</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <hr>
+                        <div class="form-inline">
+                            <button type="submit" class="btn btn-primary my-1">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

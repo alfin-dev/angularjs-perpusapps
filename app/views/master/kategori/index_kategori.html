@@ -1,0 +1,88 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<!-- Search bar start -->
+<div class="search-container">
+    <!-- Row start -->
+    <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 col-md-7 col-sm-8 col-12">
+
+            <div class="search-box">
+                <input type="text" class="search-query" ng-change="getCategories()" ng-model="searchValue"
+                    placeholder="Search your category here ...">
+                <i class="icon-search1"></i>
+            </div>
+
+        </div>
+    </div>
+    <!-- Row end -->
+</div>
+<!-- Search bar end -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <div class="mr-2">
+                    <h5 class="title">Categories</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Download CSV" class="download-reports">
+                    <i class="icon-download1"></i>
+                </a>
+                <a href="#!/add-kategori" data-toggle="tooltip" data-placement="top" title="Tambah Category"
+                    class="download-reports mr-3">
+                    <i class="icon-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>Nama Kategori</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="category in categories.data">
+                                    <td>{{category.nama_kategori}}</td>
+                                    <td>
+                                        <a ng-show="{{admin}}" href="#!/edit-kategori?id={{category.id}}"
+                                            class="btn btn-sm btn-warning"><i class="icon-eye1"></i></a>
+                                        <button ng-show="{{admin}}" class="btn btn-sm btn-danger"
+                                            ng-click="deleteCategoryFunc(category.id)"><i
+                                                class="icon-delete1"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-right mt-3">
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(categories.prev_page_url)"
+                                ng-show="categories.prev_page_url">Prev</button>
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(categories.next_page_url)"
+                                ng-show="categories.next_page_url">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

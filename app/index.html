@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap4 Dashboard Template">
+    <meta name="author" content="ParkerThemes">
+    <link rel="shortcut icon" href="assets/img/fav.png" />
+
+    <!-- Title -->
+    <title>E - Library</title>
+
+
+
+    <!-- *************
+			************ Common Css Files *************
+			************ -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Icomoon Font Icons css -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/style.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+    <!-- *************
+			************ Vendor Css Files *************
+			************ -->
+    <!-- Datepickers css -->
+    <link rel="stylesheet" href="assets/vendor/daterange/daterange.css" />
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+</head>
+<body>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="views/login/login.js"></script>
+    <script src="views/dashboard/dashboard.js"></script>
+    <script src="views/master/master_buku.js"></script>
+    <script src="views/master/kategori/master_kategori.js"></script>
+    <script src="views/peminjaman/peminjaman.js"></script>
+    <script src="views/member/index_member.js"></script>
+    <script src="core/version/version.js"></script>
+    <script src="core/version/version-directive.js"></script>
+    <script src="core/version/interpolate-filter.js"></script>
+    <script src="../node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="../node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="../node_modules/ngstorage/ngStorage.min.js"></script>
+    <script src="../node_modules/angular-middleware/dist/angular-middleware.min.js"></script>
+    <script src="../node_modules/angularjs-sweetalert2/SweetAlert2.min.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../node_modules/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="../node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script src="config-lazyload.js"></script>
+    <!-- *************
+				************ Required JavaScript Files *************
+			************* -->
+    <!-- Required jQuery first, then Bootstrap Bundle JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/nav.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/vendor/daterange/daterange.js"></script>
+
+    <!-- Apex Charts -->
+    <!-- <script src="assets/vendor/apex/apexcharts.min.js"></script>
+    <script src="assets/vendor/apex/custom/apexLineChartGradient.js"></script>
+    <script src="assets/vendor/apex/custom/apexColumnBasic.js"></script>
+    <script src="assets/vendor/apex/custom/apexAllCustomGraphs.js"></script> -->
+
+    <!-- Main Js Required -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Loading starts -->
+    <!-- <div id="loading-wrapper">
+        <div class="spinner-border text-apex-green" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div> -->
+    <!-- Loading ends -->
+
+    <div class="container">
+
+
+        <!-- *************
+				************ Main container start *************
+				************* -->
+        <div class="main-container" ng-view>
+
+        </div>
+        <!-- *************
+				************ Main container end *************
+				************* -->
+
+
+    </div>
+
+</body>
+</html>

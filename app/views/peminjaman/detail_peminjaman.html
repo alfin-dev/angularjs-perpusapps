@@ -1,0 +1,53 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="title">Detail Buku</h5>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <div class="row gutters">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <div class="jumbotron">
+                <h1 class="display-4 text-info">{{dataPeminjaman.book.judul}}</h1>
+                <h5>{{dataPeminjaman.book.category.nama_kategori}}</h5>
+                <br>
+                <div class="text-center">
+                    <img class="card-img-top"
+                        src="http://perpus-api.mamorasoft.com/storage/{{dataPeminjaman.book.path}}" alt="Cover"
+                        style="width: 25rem;height: 35rem;">
+                </div>
+                <p class="lead">Ini adalah sinopsis, Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                    not only five centuries, but also the leap into electronic typesetting, remaining essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.
+                </p>
+                <hr class="my-4">
+                <label for="datePinjam">Tangga peminjaman : {{dataPeminjaman.tanggal_peminjaman}} -
+                    {{dataPeminjaman.tanggal_pengembalian}}</label>
+                <br>
+                <button type="button" class="btn btn-info btn-sm ml-3" ng-show="dataPeminjaman.status == 2"
+                    ng-click="bookReturnFunc(dataPeminjaman.id)">Kembalikan Buku</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

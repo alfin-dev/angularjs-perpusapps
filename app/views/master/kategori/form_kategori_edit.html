@@ -1,0 +1,69 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="title">Form Kategori</h5>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container">
+                <div class="date-range">
+                    <div id="reportrange">
+                        <i class="icon-calendar cal"></i>
+                        <span class="range-text"></span>
+                        <i class="icon-chevron-down arrow"></i>
+                    </div>
+                </div>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Download CSV" class="download-reports">
+                    <i class="icon-download1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <form ng-submit="editCategoryFunc()" name="kategoriForm" novalidate>
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="inputName">Nama Kategori</label>
+                                    <input type="text" class="form-control" id="inputName"
+                                        placeholder="Masukkan nama kategori" name="kategori"
+                                        ng-model="addCategory.nama_kategori" ng-required="true">
+                                    <small ng-if="kategoriForm.kategori.$touched && kategoriForm.kategori.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <hr>
+                        <div class="form-inline">
+                            <button type="submit" class="btn btn-primary my-1">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

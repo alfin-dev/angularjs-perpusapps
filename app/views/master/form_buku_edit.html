@@ -1,0 +1,138 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="title">Form Edit Buku</h5>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container">
+                <div class="date-range">
+                    <div id="reportrange">
+                        <i class="icon-calendar cal"></i>
+                        <span class="range-text"></span>
+                        <i class="icon-chevron-down arrow"></i>
+                    </div>
+                </div>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Download CSV" class="download-reports">
+                    <i class="icon-download1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <form ng-submit="editBooksFunc()" name="loginForm" novalidate>
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-3 col-lglg-3 col-md-3 col-sm-3 col-12">
+                                <div class="form-group">
+                                    <label for="inputName">Judul Buku</label>
+                                    <input type="text" class="form-control" id="inputName"
+                                        placeholder="Masukkan judul buku" name="judul" ng-model="addBooks.judul"
+                                        ng-required="true">
+                                    <small ng-if="loginForm.judul.$touched && loginForm.judul.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg col-md-3 col-sm-3 col-12">
+                                <div class="form-group">
+                                    <label for="inputCategory">Kategori</label>
+                                    <select class="form-control" id="inputCategory" ng-model="addBooks.category">
+                                        <option ng-value="">Pilih kategori...
+                                        </option>
+                                        <option ng-repeat="category in categories" ng-value="{{category.id}}"
+                                            ng-selected="category.id == addBooks.category">
+                                            {{category.nama_kategori}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                                <div class="form-group">
+                                    <label for="inputPengarang">Pengarang</label>
+                                    <input type="text" class="form-control" name="pengarang" id="inputPengarang"
+                                        placeholder="Masukkan nama pengarang" ng-model="addBooks.pengarang"
+                                        ng-required="true">
+                                    <small ng-if="loginForm.pengarang.$touched && loginForm.pengarang.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                                <div class="form-group">
+                                    <label for="inputPenerbit">Penerbit</label>
+                                    <input type="text" class="form-control" name="penerbit" id="inputPenerbit"
+                                        placeholder="Masukkan nama penerbit" ng-model="addBooks.penerbit"
+                                        ng-required="true">
+                                    <small ng-if="loginForm.penerbit.$touched && loginForm.penerbit.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="form-group">
+                                    <label for="tahun">Tahun</label>
+                                    <input type="text" class="form-control" name="tahun" id="tahun"
+                                        placeholder="Masukkan tahun buku" ng-model="addBooks.tahun" ng-required="true">
+                                    <small ng-if="loginForm.tahun.$touched && loginForm.tahun.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="form-group">
+                                    <label for="inputName">Stock</label>
+                                    <input type="number" class="form-control" name="stock" id="inputName"
+                                        placeholder="Masukkan judul buku" ng-model="addBooks.stock" ng-required="true">
+                                    <small ng-if="loginForm.stock.$touched && loginForm.stock.$invalid"
+                                        class="text-danger">The input field
+                                        cannot be empty</small>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="form-group">
+                                    <label for="cover">Cover</label>
+                                    <input type="file" nv-file-select uploader="uploader" /><br />
+                                    <!-- <ul>
+                                        <li ng-repeat="item in uploader.queue">
+                                            Name: <span ng-bind="item.file.name"></span><br />
+                                            <button ng-click="item.upload()">upload</button>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-inline">
+                            <button type="submit" class="btn btn-primary my-1">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

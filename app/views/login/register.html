@@ -1,0 +1,72 @@
+<!-- <p>This is the partial for view 1.</p>
+<button class="btn btn-sm btn-success">YAHAHAHA</button> -->
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form ng-submit="registerFunc()" name="registerForm" novalidate>
+                    <div class="form-outline mb-4">
+                        <input type="text" name="name" id="form3Example1" ng-model="newUser.name"
+                            class="form-control form-control-lg" placeholder="Enter your full name"
+                            ng-required="true" />
+                        <label class="form-label text-white" for="form3Example1">Name</label>
+                        <small ng-if="registerForm.name.$touched && registerForm.name.$invalid" class="text-danger">This
+                            input field
+                            cannot be empty</small>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="email" name="email" id="form3Example2" ng-model="newUser.email"
+                            class="form-control form-control-lg" placeholder="Enter a valid Email" ng-required="true" />
+                        <label class="form-label text-white" for="form3Example2">Email</label>
+                        <small ng-if="registerForm.email.$touched && registerForm.email.$invalid"
+                            class="text-danger">Use a valid email</small>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="username" id="form3Example3" ng-model="newUser.username"
+                            class="form-control form-control-lg" placeholder="Enter Username" ng-required="true" />
+                        <label class="form-label text-white" for="form3Example3">Username</label>
+                        <small ng-if="registerForm.username.$touched && registerForm.username.$invalid"
+                            class="text-danger">This
+                            input field
+                            cannot be empty</small>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" name="password" id="form3Example4" ng-model="newUser.password"
+                            class="form-control form-control-lg" placeholder="Enter password" ng-required="true" />
+                        <label class="form-label text-white" for="form3Example4">Password</label>
+                        <small ng-if="registerForm.password.$touched && registerForm.password.$invalid"
+                            class="text-danger">This
+                            input field
+                            cannot be empty</small>
+                    </div>
+
+                    <div class="form-outline">
+                        <input type="password" name="confirmpassword" id="form3Example5"
+                            ng-model="newUser.confirmpassword" class="form-control form-control-lg"
+                            placeholder="Confirm password" ng-required="true" />
+                        <label class="form-label text-white" for="form3Example5">Confirm Password</label>
+                        <small ng-if="newUser.password != newUser.confirmpassword" class="text-danger">Password tidak
+                            sama !</small>
+                    </div>
+                    <div class="form-outline">
+                        <label class="form-label text-white">Back to login page? Click <a href="#!/login"
+                                class="text-primary">here</a></label>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <input type="submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Register" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<ng-include src="'views/template/header.html'"></ng-include>
+<!-- Page header start -->
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <div class="mr-2">
+                    <h5 class="title">Member</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+    <!-- Row start -->
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="member in members.data">
+                                    <td>{{member.name}}</td>
+                                    <td>{{member.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-right mt-3">
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(members.prev_page_url)"
+                                ng-show="members.prev_page_url">Prev</button>
+                            <button class="btn btn-sm btn-primary" ng-click="nextFunc(members.next_page_url)"
+                                ng-show="members.next_page_url">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->

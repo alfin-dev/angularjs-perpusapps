@@ -1,0 +1,112 @@
+<!-- Page header start -->
+<ng-include src="'views/template/header.html'"></ng-include>
+<div class="page-title">
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="title">Welcome back, {{name}}</h5>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="daterange-container">
+                <div class="date-range">
+                    <div id="reportrange">
+                        <i class="icon-calendar cal"></i>
+                        <span class="range-text"></span>
+                        <i class="icon-chevron-down arrow"></i>
+                    </div>
+                </div>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Download CSV" class="download-reports">
+                    <i class="icon-download1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
+
+
+<!-- Content wrapper start -->
+<div class="content-wrapper">
+
+
+    <!-- ************************** Visitors and Revenue ************************** -->
+    <!-- Row start -->
+    <div class="row gutters justify-content-center">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+
+            <div class="daily-sales">
+                <h6>Buku</h6>
+                <h1>{{totalBuku}}</h1>
+                <p>Total Buku</p>
+                <div id="apexLineChartGradient" class="blue-graph"></div>
+            </div>
+
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+
+            <div class="daily-sales">
+                <h6>Stok</h6>
+                <h1>{{totalStok}}</h1>
+                <p>Total Stok</p>
+                <div id="apexLineChartGradient2" class="red-graph"></div>
+            </div>
+
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+
+            <div class="daily-sales">
+                <h6>Member</h6>
+                <h1>{{totalMember}}</h1>
+                <p>Total Member</p>
+                <div id="apexLineChartGradient3" class="green-graph"></div>
+            </div>
+
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+
+            <div class="daily-sales">
+                <h6>Pegawai</h6>
+                <h1>{{totalPegawai}}</h1>
+                <p>Total Pegawai</p>
+                <div id="apexLineChartGradient4" class="lavandar-graph"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Row end -->
+
+
+    <!-- Row start -->
+    <div class="row gutters justify-content-center">
+        <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <!-- Row start -->
+            <div class="row no-gutters">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+                    <div class="daily-sales">
+                        <h6>Dipinjam</h6>
+                        <h1>{{totalDipinjam}}</h1>
+                        <p>Total Dipinjam</p>
+                        <div id="apexColumnBasic" class="orange-graph"></div>
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+                    <div class="daily-sales">
+                        <h6>Dikembalikan</h6>
+                        <h1>{{totalDikembalikan}}</h1>
+                        <p>Total Dikembalikan</p>
+                        <div id="apexColumnBasic3" class="blue-graph"></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Row end -->
+
+        </div>
+    </div>
+    <!-- Row end -->
+
+</div>
+<!-- Content wrapper end -->
